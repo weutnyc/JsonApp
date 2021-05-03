@@ -17,8 +17,16 @@ class ImageViewController: UIViewController {
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         fetchImage()
-    
     }
+    
+    @IBAction func getRandomDogButton(_ sender: Any) {
+        fetchImage()
+    }
+    
+    @IBAction func exitButton(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     
     private func fetchImage() {
         guard let url = URL(string: "https://dog.ceo/api/breeds/image/random") else { return }
